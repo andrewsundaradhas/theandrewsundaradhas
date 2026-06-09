@@ -23,7 +23,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  eyebrow: "Computer Science & Robotics · VIT Chennai · 2027",
+  eyebrow: "Computer Science & Robotics",
   headline: "Andrew Sundaradhas",
   subheading:
     "I build intelligent systems — from autonomous drones to AI-powered fintech platforms. CS & Robotics engineer with deep ML expertise and a track record of shipping production systems.",
@@ -295,7 +295,6 @@ export const MARQUEE_ITEMS = [
   "AI / ML ENGINEER",
   "AUTONOMOUS DRONES",
   "ML PIPELINES",
-  "VIT CHENNAI · 2027",
   "OPEN TO INTERNSHIPS",
   "ROBOTICS",
   "SHIPPING IN PRODUCTION",
