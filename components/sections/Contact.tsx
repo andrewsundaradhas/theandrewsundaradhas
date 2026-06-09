@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin } from "@/components/ui/BrandIcons";
 import { CONTACT, PROFILE } from "@/lib/constants";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";

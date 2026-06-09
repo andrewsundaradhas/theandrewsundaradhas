@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "@/components/ui/BrandIcons";
 import { PROFILE } from "@/lib/constants";
 
 export function Footer() {

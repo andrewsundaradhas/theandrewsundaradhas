@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
+import { Github } from "@/components/ui/BrandIcons";
 import { PROJECTS, type Project } from "@/lib/constants";
 import { BG, type StickerColor } from "@/lib/colors";
 import { SectionLabel } from "@/components/ui/SectionLabel";
