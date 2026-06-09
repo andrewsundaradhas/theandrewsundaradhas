@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Sticker palette ---- */
+  --color-carbon: #000000;
+  --color-paper: #ffffff;
+  --color-sky: #dceeff;
+  --color-concrete: #cccccc;
+  --color-mist: #e9e9e9;
+  --color-electric: #4da2ff;
+  --color-mint: #55db9c;
+  --color-lavender: #e9ccff;
+  --color-ember: #fb4903;
+  --color-sunburst: #ffd731;
+  --color-violet: #5c4ade;
+
+  /* ---- Fonts (bound to next/font CSS variables) ---- */
+  --font-display: var(--font-display-face), "Arial Black", sans-serif;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
+
+  /* ---- Radii ---- */
+  --radius-card: 20px;
+  --radius-elevated: 40px;
+  --radius-pill: 1600px;
+  --radius-sticker: 16px;
+  --radius-body: 30px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  border-color: var(--color-carbon);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-sky);
+  color: var(--color-carbon);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  font-feature-settings: "ss01" on, "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Section scroll offset so the fixed nav doesn't cover anchored headings */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+/* ---- Display headline: crushed leading, sculptural ---- */
+.display-text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  /* never let a single huge word force horizontal overflow on small screens */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---- Hand-cut sticker outline helpers ---- */
+.outline-cut {
+  border: 1px solid var(--color-carbon);
+}
+.outline-cut-2 {
+  border: 2px solid var(--color-carbon);
+}
+
+/* ---- Uppercase label ---- */
+.label-caps {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---- Marquee animation ---- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* ---- Slow float for the 3D ribbon ---- */
+@keyframes ribbon-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--ribbon-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-18px) rotate(var(--ribbon-rot, 0deg));
+  }
+}
+.animate-ribbon {
+  animation: ribbon-float 9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-ribbon {
+    animation: none;
+  }
+}
+
+/* ---- Focus rings (accessibility) ---- */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-violet);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-sunburst);
+  color: var(--color-carbon);
+}
